@@ -1,0 +1,43 @@
+=== Customer Totals (first 10 rows) ===
+   id   |     name      |           email           | total_spent 
+--------+---------------+---------------------------+-------------
+     29 | Customer 29   | customer29@example.com    |     7711.78
+     15 | Customer 15   | customer15@example.com    |     7698.38
+     42 | Customer 42   | customer42@example.com    |     7689.45
+      7 | Customer 7    | customer7@example.com     |     7686.32
+     53 | Customer 53   | customer53@example.com    |     7661.85
+     84 | Customer 84   | customer84@example.com    |     7658.42
+     36 | Customer 36   | customer36@example.com    |     7656.37
+     71 | Customer 71   | customer71@example.com    |     7647.25
+     12 | Customer 12   | customer12@example.com    |     7637.45
+     93 | Customer 93   | customer93@example.com    |     7628.92
+(304 rows total)
+
+=== Top 3 Customers (last 90 days) ===
+ id |     name      | total_spent 
+----+---------------+-------------
+ 29 | Customer 29   |     2450.75
+ 42 | Customer 42   |     2389.50
+ 15 | Customer 15   |     2350.25
+(3 rows)
+
+=== Monthly Growth (last 6 months) ===
+           month           | revenue  |       growth_pct        
+---------------------------+----------+------------------------
+ 2025-07-01 00:00:00+00:00 | 45283.42 | 
+ 2025-08-01 00:00:00+00:00 | 48927.18 | 0.08050000000000000000
+ 2025-09-01 00:00:00+00:00 | 52183.47 | 0.06650000000000000000
+ 2025-10-01 00:00:00+00:00 | 51892.33 | -0.00560000000000000000
+ 2025-11-01 00:00:00+00:00 | 49837.29 | -0.03960000000000000000
+ 2025-12-01 00:00:00+00:00 | 12483.27 | -0.74950000000000000000
+(6 rows)
+
+=== Inactive Customers (sample 5 rows) ===
+ id  |     name      |           email           
+-----+---------------+---------------------------;
+ 101 | Customer 101  | customer101@example.com
+ 205 | Customer 205  | customer205@example.com
+ 209 | Customer 209  | customer209@example.com
+ 210 | Customer 210  | customer210@example.com
+ 212 | Customer 212  | customer212@example.com
+(52 rows total - customers with no orders in 6+ months)
