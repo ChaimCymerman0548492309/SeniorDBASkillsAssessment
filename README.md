@@ -29,7 +29,13 @@ A complete PostgreSQL database assessment for a Senior DBA position. Shows skill
   - Large: ~300,000 orders (for performance testing)
 - **Data features**: 15% of customers are "heavy buyers" (realistic skew)
 
-**Sample query output**: See `samples/sample_outputs.txt`
+**Schema Design Screenshot:**
+![Database Schema](image.png)
+
+*Database tables created with proper data types and constraints*
+
+**Sample CSV Output:**
+A sample export file `totals_20251210_150122.csv` is included showing customer totals.
 
 ### Task 2: Performance Tuning ✅
 - **indexes.sql**: Three key indexes with explanations:
@@ -37,19 +43,33 @@ A complete PostgreSQL database assessment for a Senior DBA position. Shows skill
   2. `idx_orders_order_date` - Optimizes date-based queries
   3. `idx_customers_email` - Improves customer lookups
 
+**Before Indexing - Monthly Growth Query:**
+![Monthly Growth Before Index](befor_index_q_monthly_growth.png)
+
+**After Indexing - Monthly Growth Query:**
+![Monthly Growth After Index](q_monthly_growth.png)
+
 **Performance results**:
 - Monthly growth query: 68% faster after indexing
 - Inactive customers query: 72% faster after indexing
-- **Evidence**: See screenshots `befor_index_q_monthly_growth.png` and `q_monthly_growth.png`
 
 ### Task 3: Business Reports ✅
 Three ready-to-use SQL reports:
 
 1. **Top 3 customers (90-day rolling window)**: Best for continuous business tracking
-2. **Monthly revenue growth**: Shows trends over 6 months with percentage change
-3. **Inactive customers**: Finds customers with no orders in 6+ months
+   ![Top 3 Customers](q_top3_customers.png)
 
-**Sample outputs in**: `samples/sample_outputs.txt`
+2. **Monthly revenue growth**: Shows trends over 6 months with percentage change
+
+3. **Inactive customers**: Finds customers with no orders in 6+ months
+   **Before Indexing:**
+   ![Inactive Customers Before Index](befor_index_q_inactive_customers.png)
+   
+   **After Indexing:**
+   ![Inactive Customers After Index](q_inactive_customers.png)
+
+**Sample Query - Customer Totals:**
+![Customer Totals Query](q_total_per_customer.png)
 
 ### Task 4: Stored Procedure ✅
 - **proc_customer_orders.sql**: Gets all orders for a customer
@@ -57,7 +77,11 @@ Three ready-to-use SQL reports:
   - Returns orders sorted by date (newest first)
   - Includes total spent by the customer
   - Validates customer exists (throws clear error if not)
-- **Testing screenshots**: See `proc_error_and_proc_success.png`
+
+**Stored Procedure Testing Screenshot:**
+![Stored Procedure Test](proc_error_and_proc_success.png)
+
+*Shows successful execution with valid customer ID and proper error handling with invalid ID*
 
 ### Task 5: Automation Scripting ✅
 - **scripts/export_totals.sh**: Bash script that exports customer totals to CSV
